@@ -1,6 +1,6 @@
 extends Node
 
-const SAVE_PATH := "res://Scripts/Save/save.cfg"
+const SAVE_PATH := "user://Scripts/Save/save.cfg"
 func save_highscore(highscore):
 	var config = ConfigFile.new()
 	config.set_value("Game", "Highscore", highscore)
