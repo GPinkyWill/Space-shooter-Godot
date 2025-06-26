@@ -13,7 +13,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_4g5dr")
 
-[node name="Label" type="Label" parent="."]
+[node name="GameOverText" type="Label" parent="."]
 layout_mode = 2
 offset_left = 128.0
 offset_top = 64.0
@@ -24,15 +24,29 @@ label_settings = ExtResource("2_gesjl")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
+[node name="HighscoreText" type="Label" parent="."]
 layout_mode = 2
 offset_left = 128.0
-offset_top = 80.0
+offset_top = 96.0
 offset_right = 192.0
-offset_bottom = 88.0
-text = "HIGHSCORE: "
+offset_bottom = 104.0
+text = "HIGHSCORE: 0"
 label_settings = ExtResource("2_gesjl")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ReturnText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.844444
+anchor_right = 1.0
+anchor_bottom = 0.911111
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press Escape to return to Main Menu"
+label_settings = ExtResource("2_gesjl")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="StarParticles" parent="." instance=ExtResource("3_c4m1s")]
