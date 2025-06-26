@@ -1,0 +1,23 @@
+extends Area2D
+
+@export var speed = 100
+
+const LASER_SCENE = preload("res://Scenes/laser.tscn")
+
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("ui_up"):
+		position.y -= speed * delta
+	if Input.is_action_pressed("ui_down"):
+		position.y += speed * delta
+		
+	if Input.is_action_just_pressed("Shoot"):
+		var laser = LASER_SCENE.instantiate()
+		var world = get_tree().current_scene
+		world.add_child(laser)
+		laser.position = position
+	pass
+
+
+func _on_area_entered(area: Area2D) -> void:
+	queue_free()
+	area.queue_free()

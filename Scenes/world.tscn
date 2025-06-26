@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccru0vndxd851"]
+
+[ext_resource type="PackedScene" uid="uid://c7pj264iojowt" path="res://Scenes/ship.tscn" id="1_0bl7f"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_dkh0p"]
+[ext_resource type="PackedScene" uid="uid://jt0kkkhy0h7t" path="res://Scenes/enemy_spawner.tscn" id="2_ehk21"]
+[ext_resource type="LabelSettings" uid="uid://c70unw1gllbe1" path="res://Font/LabelFont/LabelSettings.tres" id="4_j3tt2"]
+[ext_resource type="PackedScene" uid="uid://ckwdmso2r7u8w" path="res://Scenes/star_particles.tscn" id="5_tjv14"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_dkh0p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 323.0
+offset_bottom = 182.0
+color = Color(0, 0, 0, 1)
+
+[node name="Ship" parent="." instance=ExtResource("1_0bl7f")]
+position = Vector2(16, 96)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("2_ehk21")]
+position = Vector2(350, 0)
+
+[node name="ScoreLabel" type="Label" parent="."]
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 118.0
+offset_top = 1.0
+offset_right = 188.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Score = 0"
+label_settings = ExtResource("4_j3tt2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StarParticles" parent="." instance=ExtResource("5_tjv14")]
