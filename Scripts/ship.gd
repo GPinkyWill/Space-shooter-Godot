@@ -4,6 +4,9 @@ extends Area2D
 
 const LASER_SCENE = preload("res://Scenes/laser.tscn")
 
+signal ship_destroyed
+
+
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_up"):
 		position.y -= speed * delta
@@ -21,3 +24,4 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	queue_free()
 	area.queue_free()
+	ship_destroyed.emit()
