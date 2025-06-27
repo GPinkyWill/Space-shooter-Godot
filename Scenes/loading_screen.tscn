@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi1af62tfhssr"]
+
+[ext_resource type="Script" path="res://Scripts/loading_screen.gd" id="1_0y30r"]
+[ext_resource type="PackedScene" uid="uid://ckwdmso2r7u8w" path="res://Scenes/star_particles.tscn" id="2_nu6ny"]
+[ext_resource type="LabelSettings" uid="uid://c70unw1gllbe1" path="res://Font/LabelFont/LabelSettings.tres" id="3_3pwtk"]
+
+[node name="Loading Screen" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_0y30r")
+
+[node name="StarParticles" parent="." instance=ExtResource("2_nu6ny")]
+
+[node name="Loading" type="Label" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 72.0
+offset_right = 224.0
+offset_bottom = 95.0
+label_settings = ExtResource("3_3pwtk")

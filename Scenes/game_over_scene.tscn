@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfs1xalv3u0hq"]
+
+[ext_resource type="Script" path="res://Scripts/game_over_scene.gd" id="1_dx3lf"]
+[ext_resource type="PackedScene" uid="uid://ckwdmso2r7u8w" path="res://Scenes/star_particles.tscn" id="2_u36qx"]
+[ext_resource type="LabelSettings" uid="uid://c70unw1gllbe1" path="res://Font/LabelFont/LabelSettings.tres" id="3_dhr8v"]
+
+[node name="GameOver Scene" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_dx3lf")
+
+[node name="StarParticles" parent="." instance=ExtResource("2_u36qx")]
+
+[node name="GameOverText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 48.0
+offset_right = 192.0
+offset_bottom = 71.0
+text = "GAME OVER
+"
+label_settings = ExtResource("3_dhr8v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighscoreText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 72.0
+offset_right = 192.0
+offset_bottom = 95.0
+text = "Highscore: 0"
+label_settings = ExtResource("3_dhr8v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackToMenuText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -71.5
+offset_top = -23.0
+offset_right = 71.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press Escape to return to Main Menu"
+label_settings = ExtResource("3_dhr8v")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -6,12 +6,19 @@ const LASER_SCENE = preload("res://Scenes/laser.tscn")
 
 signal ship_destroyed
 
+var height = ProjectSettings.get_setting("display/window/size/viewport_height")
+
+var width = ProjectSettings.get_setting("display/window/size/viewport_width")
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("ui_up") && position.y > 16:
 		position.y -= speed * delta
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("ui_down") && position.y < height - 16:
 		position.y += speed * delta
+	if Input.is_action_pressed("ui_left") && position.x > 16:
+		position.x -= speed * delta
+	if Input.is_action_pressed("ui_right") && position.x < width/2:
+		position.x += speed * delta
 		
 	if Input.is_action_just_pressed("Shoot"):
 		var laser = LASER_SCENE.instantiate()
