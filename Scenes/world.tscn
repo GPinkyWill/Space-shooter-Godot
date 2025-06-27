@@ -40,4 +40,8 @@ vertical_alignment = 1
 
 [node name="StarParticles" parent="." instance=ExtResource("5_tjv14")]
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="ship_destroyed" from="Ship" to="." method="_on_ship_ship_destroyed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

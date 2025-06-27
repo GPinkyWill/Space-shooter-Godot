@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var timer: Timer = $Timer
 
 @onready var score_label: Label = $ScoreLabel
 
@@ -12,7 +13,10 @@ var score = 0:
 
 
 func _on_ship_ship_destroyed() -> void:
-	await get_tree().create_timer(2.0).timeout
+	timer.start()
+
+
+func _on_timer_timeout() -> void:
 	var highscore = SaveAndLoad.load_highscore()
 	if highscore != null:
 		if score > highscore:
